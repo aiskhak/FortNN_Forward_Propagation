@@ -9,7 +9,8 @@ $ gfortran forward_pass.f90 fortfp.f90 -o forward_pass.exe
 # How to save weights and biases from a trained neural network:
 
 Current example demonstrates a neural network with architecture (can be easily modified in the main program):
-6 layers with: 9 input neurons, 100-100-100-100 (hidden layers), and 6 output nerons;
+
+6 layers with: 9 input neurons, 100-100-100-100 (hidden layers), and 6 output neurons;
 activations - leaky relu; no activation in the last layer.
 
 Of course, the architecture should match one that obtained after training:
