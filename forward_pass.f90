@@ -47,7 +47,7 @@ program forward_pass
    afuncs(nl)%f => no_activation
 
    ! define number of neurons in each layer and initialize neural network
-   CALL mynn%init(layers=[n_in, n_hi, n_hi, n_hi, n_hi, n_out], activ_func=afuncs)
+   CALL mynn%init([n_in, n_hi, n_hi, n_hi, n_hi, n_out], afuncs)
 
    ! perform forward pass for each input
    do i = 1,n_batch
