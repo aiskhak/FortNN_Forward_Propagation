@@ -89,7 +89,6 @@ CONTAINS
 
       ! list of activation functions passed in
       TYPE (af), DIMENSION(0:), INTENT(in) :: activ_func
-      REAL(kind=dp) :: sd
       TYPE (dyn_arr) :: wb
 
       ! check if number of activation functions match number of layers
@@ -124,10 +123,7 @@ CONTAINS
          ! allocate outputs
          ALLOCATE (this%layers(i)%y(layers(i+1)))
 
-         ! initialize weights and biases using normal distribution
-         ! based on Glorot method which is to force SD=sqrt(2/nin+nout) for each layer
-         ! the standard deviation for creating the initial weights:
-         sd = SQRT(2._dp / REAL(layers(i+1) + layers(i), dp))
+         ! read weights and biases from files
          CALL readwb(i, SHAPE(this%layers(i)%w), wb)
          CALL readwb(i, SHAPE(this%layers(i)%b), wb)
          this%layers(i)%w = wb%m
