@@ -5,7 +5,7 @@ A flexible Fortran program that reads weights and biases from files (saved from 
 # To compile: 
 
 ```
-$ gfortran forward_pass.f90 fortfp.f90 -o forward_pass.exe
+gfortran forward_pass.f90 fortfp.f90 -o forward_pass.exe
 ```
 replace ```gfortran``` with ```ifort``` or ```mpif77``` if necessary.
 
