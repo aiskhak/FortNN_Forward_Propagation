@@ -16,8 +16,8 @@ program forward_pass
    real(8), allocatable, dimension (:,:) :: inputs  ! array of inputs: (n_neurons, batch_size)
    real(8), allocatable, dimension (:) :: outputs   ! array of outputs: (n_neurons)
    integer nl                                       ! number of layers in neural network
-   integer n_in, n_hi, n_out			    ! number of neurons
-   integer n_batch			            ! input batch size
+   integer n_in, n_hi, n_out			    		       ! number of neurons
+   integer n_batch			            			    ! input batch size
    integer i, j                                     ! loop parameters
    
    ! input parameters
@@ -28,18 +28,18 @@ program forward_pass
    n_batch = 1
 
    ! allocate memory
-   ALLOCATE(afuncs(nl), inputs(n_in, n_batch), outputs(n_out))
+   allocate(afuncs(nl), inputs(n_in, n_batch), outputs(n_out))
 
    ! generate some inputs for forward propagation
    do j = 1,n_in
       do i = 1,n_batch
-         inputs(j,i) = 1.d0
+         inputs(j,i) = 0.d0
       enddo
    enddo
 
    ! define activation functions in each layer
    !    options: htan, lrelu, smax, sigmoid, no_activation
-   afuncs(1)%f => NULL()   ! no activation
+   afuncs(1)%f => null()   ! no activation
    afuncs(2)%f => lrelu
    afuncs(3)%f => lrelu
    afuncs(4)%f => lrelu
@@ -47,7 +47,7 @@ program forward_pass
    afuncs(nl)%f => no_activation
 
    ! define number of neurons in each layer and initialize neural network
-   CALL mynn%init([n_in, n_hi, n_hi, n_hi, n_hi, n_out], afuncs)
+   call mynn%init([n_in, n_hi, n_hi, n_hi, n_hi, n_out], afuncs)
 
    ! perform forward pass for each input
    do i = 1,n_batch
