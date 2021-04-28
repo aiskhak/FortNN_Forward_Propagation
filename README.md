@@ -19,6 +19,7 @@ Of course, the architecture should match one that obtained after training:
 
 Example of saving from tensorflow (1.15):
 
+'''
 vec = []
 vec.extend([w_fc1, b_fc1, w_fc2, b_fc2, w_fc3, b_fc3, w_fc4, b_fc4, w_fc5, b_fc5])
 def save_w_b(vec):
@@ -58,6 +59,7 @@ def save_w_b(vec):
         np.savetxt(f, w4, newline=" ")
         f.write(b'\n')  
         np.savetxt(f, w5, newline=" ")
+'''
 
 # Contributions
 
