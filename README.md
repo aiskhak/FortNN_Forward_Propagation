@@ -2,6 +2,13 @@
 
 A flexible Fortran program that reads weights and biases from files (saved from any program, e.g., Python - Tensorflow or Pytorch, etc.) and performs a forward propagation. Inspired by: https://github.com/ketetefid/FortNN
 
+# Please cite our work if useful:
+
+Cheng-Kai Tai, Arsen S. Iskhakov, Nam T. Dinh, and Igor A. Bolotnov
+TOWARDS DATA-DRIVEN TURBULENCE MODELING OF MIXED CONVECTION IN ADVANCED REACTORS USING DNS DATA
+The 19th International Topical Meeting on Nuclear Reactor Thermal Hydraulics (NURETH-19) Log nr.: 36432
+Brussels, Belgium, March 6 - 11, 2022
+
 # To compile: 
 
 ```
